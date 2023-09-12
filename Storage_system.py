@@ -116,7 +116,7 @@ while True:
         overview_on_start += int(overview_start)
         overview_on_end = 0
         overview_on_end += int(overview_end)
-        with open("History_overview.txt", mode='w') as file_stream:
+        with open("History_overview.txt", mode='a') as file_stream:
             history_file = file_stream.write(f'{overview_on_start} \n {overview_on_end} \n\n')
             file_stream.close()
         if overview_start == '' and overview_end == '':
@@ -124,7 +124,7 @@ while True:
             print(f'{warehouse_list[0 : -1]}')
             print(f'{quantity_of_items[0 : -1]}')
             print(f'{prices[0 : -1]} \n')
-            with open("History_overview.txt", mode='w') as file_stream:
+            with open("History_overview.txt", mode='a') as file_stream:
                 history_file = file_stream.write(f'In store is: \n {warehouse_list[0 : -1]} \n')
                 history_file = file_stream.write(f'{quantity_of_items[0 : -1]} \n {prices[0 : -1]}\n\n')
                 file_stream.close()
@@ -134,7 +134,7 @@ while True:
             print(f'{warehouse_list[overview_on_start : -1]}')
             print(f'{quantity_of_items[overview_on_start : -1]}')
             print(f'{prices[overview_on_start : -1]} \n')
-            with open("History_overview.txt", mode='w') as file_stream:
+            with open("History_overview.txt", mode='a') as file_stream:
                 history_file = file_stream.write(f'In store is: \n {warehouse_list[overview_on_start : -1]} \n')
                 history_file = file_stream.write(f'{quantity_of_items[overview_on_start : -1]} \n ')
                 history_file = file_stream.write(f'{prices[overview_on_start : -1]} \n\n')
@@ -145,7 +145,7 @@ while True:
             print(f'{warehouse_list[0: overview_on_end]}')
             print(f'{quantity_of_items[0: overview_on_end]}')
             print(f'{prices[0: overview_on_end]} \n')
-            with open("History_overview.txt", mode='w') as file_stream:
+            with open("History_overview.txt", mode='a') as file_stream:
                 history_file = file_stream.write(f'In store is: \n {warehouse_list[0: overview_on_end]} \n')
                 history_file = file_stream.write(f'{quantity_of_items[0: overview_on_end]} \n ')
                 history_file = file_stream.write(f'{prices[0: overview_on_end]} \n\n')
@@ -156,20 +156,20 @@ while True:
             print(f'{warehouse_list[overview_on_start: overview_on_end]}')
             print(f'{quantity_of_items[overview_on_start: overview_on_end]}')
             print(f'{prices[overview_on_start: overview_on_end]} \n')
-            with open("History_overview.txt", mode='w') as file_stream:
+            with open("History_overview.txt", mode='a') as file_stream:
                 history_file = file_stream.write(f'In store is:\n {warehouse_list[overview_on_start: overview_on_end]}')
                 history_file = file_stream.write(f'\n {quantity_of_items[overview_on_start: overview_on_end]} \n')
                 history_file = file_stream.write(f'{prices[overview_on_start: overview_on_end]} \n\n')
                 file_stream.close()
         elif overview_on_start <= -1:
             print(f'Error try between zero and amount items in your list. \n Your list: {warehouse_list.copy()} \n')
-            with open("History_overview.txt", mode='w') as file_stream:
+            with open("History_overview.txt", mode='a') as file_stream:
                 history_file = file_stream.write(f'Error try between zero and amount items in your list. \n')
                 history_file = file_stream.write(f'Your list: {warehouse_list.copy()} \n\n')
                 file_stream.close()
         elif overview_on_end >= 0:
             print(f'Error try between zero and amount items in your list. \n Your list: {warehouse_list.copy()} \n')
-            with open("History_overview.txt", mode='w') as file_stream:
+            with open("History_overview.txt", mode='a') as file_stream:
                 history_file = file_stream.write(f'Error try between zero and amount items in your list. \n')
                 history_file = file_stream.write(f'Your list: {warehouse_list.copy()} \n\n')
                 file_stream.close()
